@@ -15,17 +15,34 @@ public class Admin extends User implements Reportable {
         return false;
     }
 
-    public void backupUsers() {
-        // to be updated
+    /**
+     * Generates and displays a report of borrowed,
+     * available, and lost library items.
+     * @param library the library to generate the report from
+     */
+    @Override
+    public void generateReport(Library library) {
+
+        int borrowedItems = 0;
+        int inStoreItems = 0;
+        int lostItems = 0;
+
+        for (Item item : library.getItems()) {
+
+            switch (item.getStatus()) {
+                case BORROWED ->
+                    borrowedItems++;
+                case IN_STORE ->
+                    inStoreItems++;
+                case LOST ->
+                    lostItems++;
+            }
+        }
+
+        System.out.print("===== LIBRARY REPORT =====\n");
+        System.out.printf("Borrowed Items: %d\n", borrowedItems);
+        System.out.printf("In-Store Items: %d\n", inStoreItems);
+        System.out.printf("Lost Items: %d\n", lostItems);
+        System.out.println("==========================");
     }
-
-    public void backupItems() {
-        // to be updated
-
-    }
-
-    public void generateReport() {
-        // to be updated
-    }
-
 }

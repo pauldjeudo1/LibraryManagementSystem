@@ -21,7 +21,6 @@ public class Student extends User {
      * Determines whether the student is allowed to borrow
      * the specified item. Students may only borrow books
      * and may not exceed the maximum borrowing limit.
-     *
      * @param item the item to borrow
      * @return true if the student can borrow the item, false otherwise
      */

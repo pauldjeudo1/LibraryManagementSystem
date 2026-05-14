@@ -16,9 +16,13 @@ public class Book extends Item {
 
     public Book(String title, Status status, String author, String isbn, String genre) {
         super(title, status);
+        this.isbn = isbn.replace("-", "").trim();
+
+        if (!Validation.isValidISBN(this.isbn)) {
+            throw new IllegalArgumentException("ISBN is invalid");
+        }
 
         this.author = author;
-        this.isbn = isbn;
         this.genre = genre;
     }
 

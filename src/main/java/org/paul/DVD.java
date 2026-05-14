@@ -17,6 +17,10 @@ public class DVD extends Item {
     public DVD(String title, Status status, String director, int duration) {
         super(title, status);
 
+        if (!Validation.isValidDuration(duration)) {
+            throw new IllegalArgumentException("Invalid duration");
+        }
+
         this.director = director;
         this.duration = duration;
     }

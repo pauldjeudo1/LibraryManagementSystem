@@ -4,13 +4,16 @@ public class Validation {
 
     /**
      * Validates whether the given ISBN follows the required format.
-     *
      * @param isbn the ISBN to validate
      * @return true if the ISBN is valid, false otherwise
      */
-    public boolean isValidISBN(String isbn) {
+    public static boolean isValidISBN(String isbn) {
 
-        return false; // placeholder, to be updated
+        if (isbn == null) {
+            return false;
+        }
+
+        return isbn.matches("\\d{13}");
     }
 
     /**
@@ -20,9 +23,8 @@ public class Validation {
      * @param str the string to validate
      * @return true if the string is valid, false otherwise
      */
-    public boolean isValidString(String str) {
-
-        return false; // placeholder, to be updated
+    public static boolean isValidString(String str) {
+        return str != null && !str.isBlank();
     }
 
     /**
@@ -31,9 +33,8 @@ public class Validation {
      * @param duration the duration in minutes
      * @return true if the duration is valid, false otherwise
      */
-    public boolean isValidDuration(int duration) {
-
-        return false; // placeholder, to be updated
+    public static boolean isValidDuration(int duration) {
+        return duration > 0;
     }
 
     /**
@@ -42,9 +43,8 @@ public class Validation {
      * @param issueNumber the issue number to validate
      * @return true if the issue number is valid, false otherwise
      */
-    public boolean isValidIssueNumber(int issueNumber) {
-
-        return false; // placeholder, to be updated
+    public static boolean isValidIssueNumber(int issueNumber) {
+        return issueNumber > 0;
     }
 
 }

@@ -34,7 +34,7 @@ public class UserTest {
     @DisplayName("Null item -> item not added in list")
     public void addBorrowedItemTest3() {
         User user = new Teacher("Yi Wang");
-        user.addBorrowedItem((Item)null);
+        user.addBorrowedItem(null);
         int expected = 0;
         int actual = user.getBorrowedItems().size();
         Assertions.assertEquals(expected, actual);
@@ -65,7 +65,7 @@ public class UserTest {
     @DisplayName("Null item -> no change in list")
     public void removeBorrowedItemTest3() {
         User user = new Teacher("Yi Wang");
-        user.removeBorrowedItem((Item)null);
+        user.removeBorrowedItem(null);
         int expected = 0;
         int actual = user.getBorrowedItems().size();
         Assertions.assertEquals(expected, actual);

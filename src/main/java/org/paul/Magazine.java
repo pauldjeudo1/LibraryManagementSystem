@@ -15,6 +15,11 @@ public class Magazine extends Item {
 
     public Magazine(String title, Item.Status status, String publisher, int issueNumber) {
         super(title, status);
+
+        if (!Validation.isValidIssueNumber(issueNumber)) {
+            throw new IllegalArgumentException("Invalid issue number");
+        }
+
         this.publisher = publisher;
         this.issueNumber = issueNumber;
     }

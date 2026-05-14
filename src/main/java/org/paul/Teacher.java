@@ -22,7 +22,6 @@ public class Teacher extends User {
      * the specified item. Teachers may borrow any type of
      * library item as long as they do not exceed the
      * maximum borrowing limit.
-     *
      * @param item the item to borrow
      * @return true if the teacher can borrow the item, false otherwise
      */
